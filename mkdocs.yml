@@ -1,6 +1,7 @@
 site_name: Jupyter for Mere Mortals
 site_description: Notebooks that mix code, results, and writing on a machine of your own. Installing JupyterLab and the classic Notebook, running cells against a kernel, working with real data, exporting and sharing, and an honest account of why a notebook is not a program.
 site_url: https://paulsullivan33-dev.github.io/jupyter-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
 
 # Guides live at the repo root (nice for GitHub browsing).
 # The deploy workflow copies them into docs/ before building.
