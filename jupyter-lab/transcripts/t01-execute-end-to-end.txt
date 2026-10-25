@@ -1,0 +1,18 @@
+$ jupyter execute --inplace weather-lab.ipynb
+[NbClientApp] Executing weather-lab.ipynb
+[NbClientApp] Executing notebook with kernel: python3
+[NbClientApp] Save executed results to weather-lab.ipynb
+
+$ ls -l weather-lab.ipynb   (3,020 bytes of questions; now with the answers inside)
+-rw-rw---- 1 root root 96730 Oct 25 02:23 weather-lab.ipynb
+
+$ python check_notebook.py weather-lab.ipynb weather.csv   (independent recount from the CSV)
+FOUND   Days of readings: 30
+FOUND   Hottest day: 2026-06-21 at 33 C
+FOUND   Mean high: 27.3 C
+FOUND   Total rain: 39.4 mm
+FOUND   Rainy days (1 mm or more): 7
+png outputs: 2  html outputs: 1
+counts: [1, 2, 3, 4]
+PLOT PRESENT
+ALL NUMBERS MATCH

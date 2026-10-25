@@ -1,0 +1,70 @@
+The lab — one real install, driven without a screen
+====================================================================
+
+The lab is Jupyter as pip ships it,
+installed into a fresh virtual
+environment on the build machine (an
+Ubuntu 24.04 sandbox, 2 CPUs,
+7.7 GB RAM, Python 3.12.3):
+
+  * jupyterlab 4.6.4, notebook 7.6.3,
+    jupyter_server 2.21.1,
+    ipykernel 7.4.0, nbconvert 7.17.2,
+    nbclient 0.11.0, nbformat 5.11.1.
+  * Plus pandas, matplotlib, and
+    bash_kernel, installed the same
+    way (chapter 3).
+
+The sandbox's one rule that shaped
+the lab: it has no screen. So the
+browser interfaces were never
+clicked through, and no chapter
+pretends otherwise. Everything the
+guide claims about behaviour was
+instead proven where the browser
+and the command line meet — the
+server itself, over HTTP, and the
+files it writes (the transcripts
+are the receipts):
+
+  * A notebook of 8 cells over an
+    invented weather diary was
+    executed end to end (t01); its
+    five printed answers were
+    recounted independently from the
+    CSV and matched, and its plot is
+    a real PNG inside the file —
+    stored twice, for a reason
+    chapter 7 confesses.
+  * Its outputs were cleared and the
+    file re-run from a cold kernel;
+    the new output was identical
+    (t02). A kernel was then
+    restarted mid-conversation and
+    its variable was gone (t03).
+  * The bash kernel ran a notebook
+    of shell commands with state
+    carried between cells (t04).
+  * nbconvert produced HTML (the
+    plot rides inside as data) and a
+    Python script whose output
+    matched the notebook's, word for
+    word (t05).
+  * The server answered over HTTP:
+    the version endpoint open to
+    anyone, the file list behind the
+    token, 403 without it (t06). A
+    config file and a password hash
+    were generated for real (t07).
+
+Two traps the lab fell into are
+kept as t90 transcripts rather than
+tidied away: `jupyter execute`
+without --inplace or --output ran
+everything and discarded the
+result; and the server refused to
+start as the sandbox's root user
+without --allow-root — a refusal
+readers on their own machines,
+where they are not root, will
+never see.

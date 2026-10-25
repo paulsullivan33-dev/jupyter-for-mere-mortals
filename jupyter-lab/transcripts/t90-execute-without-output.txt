@@ -1,0 +1,29 @@
+$ python make_notebook.py   (build the notebook file with nbformat)
+wrote weather-lab.ipynb with 8 cells
+
+$ ls -l weather-lab.ipynb ; the unexecuted file, outputs empty
+-rw-rw---- 1 root root 3020 Oct 25 02:22 weather-lab.ipynb
+outputs per code cell: [[], [], [], []]
+
+$ jupyter execute weather-lab.ipynb   (run every cell, top to bottom, no browser)
+[NbClientApp] Executing weather-lab.ipynb
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[NbClientApp] Executing notebook with kernel: python3
+
+real	0m13.263s
+user	0m5.635s
+sys	0m0.855s
+
+$ ls -l weather-lab.ipynb   (same file, now carrying its outputs)
+-rw-rw---- 1 root root 3020 Oct 25 02:22 weather-lab.ipynb
+
+$ python check_notebook.py weather-lab.ipynb weather.csv
+MISSING Days of readings: 30
+MISSING Hottest day: 2026-06-21 at 33 C
+MISSING Mean high: 27.3 C
+MISSING Total rain: 39.4 mm
+MISSING Rainy days (1 mm or more): 7
+png outputs: 0  html outputs: 0
+counts: [None, None, None, None]
+NO PLOT
+NUMBER MISMATCH

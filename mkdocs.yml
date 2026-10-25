@@ -1,0 +1,29 @@
+site_name: Jupyter for Mere Mortals
+site_description: Notebooks that mix code, results, and writing on a machine of your own. Installing JupyterLab and the classic Notebook, running cells against a kernel, working with real data, exporting and sharing, and an honest account of why a notebook is not a program.
+site_url: https://paulsullivan33-dev.github.io/jupyter-for-mere-mortals/
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Jupyter Is: what-jupyter-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Jupyter: installing-jupyter.md
+  - Your First Notebook: your-first-notebook.md
+  - Kernels and Languages: kernels-and-languages.md
+  - Working with Data: working-with-data.md
+  - Plots and Rich Output: plots-and-output.md
+  - Not a Program: not-a-program.md
+  - The Notebook File: the-notebook-file.md
+  - Running Without the Browser: running-without-the-browser.md
+  - Converting and Sharing: converting-and-sharing.md
+  - Running It for Real: running-it-for-real.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

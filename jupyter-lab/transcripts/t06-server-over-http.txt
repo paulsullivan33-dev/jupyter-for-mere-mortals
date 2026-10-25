@@ -1,0 +1,20 @@
+$ jupyter lab --no-browser --allow-root --port=18811   (headless; the log prints a token URL)
+[I 2026-10-25 02:25:38.728 ServerApp] Jupyter Server 2.21.1 is running at:
+
+$ curl the API with no token at all:
+GET /api  ->  HTTP 200
+
+$ curl the API with the token in a header:
+{"version": "2.21.1"}
+$ ask the server which files it can see (token again):
+['weather-lab.ipynb', 'weather.csv', 'server.log']
+
+$ the Lab page itself, token in the address:
+GET /lab?token=...  ->  HTTP 200
+(server stopped)
+$ what the version endpoint shows a stranger (no token):
+{"version": "2.21.1"}
+$ but the file list — the door that matters — without a token:
+GET /api/contents  ->  HTTP 403
+$ and with a wrong token:
+GET /api/contents  ->  HTTP 403

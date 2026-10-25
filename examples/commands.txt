@@ -1,0 +1,56 @@
+Jupyter — the distilled commands
+====================================================================
+Placeholders: <venv> is your environment
+folder (this guide uses ~/jupyter-venv);
+<file> is a notebook filename.
+
+INSTALL (chapter 3)
+--------------------------------------------------------------------
+  sudo apt install python3-venv        # Debian/Ubuntu only
+  python3 -m venv ~/jupyter-venv
+  <venv>/bin/pip install jupyterlab notebook
+  <venv>/bin/pip install pandas matplotlib bash_kernel
+  <venv>/bin/jupyter --version         # every piece, one report
+
+START AND STOP (chapter 4)
+--------------------------------------------------------------------
+  cd ~/notebooks                       # the server sees this tree
+  <venv>/bin/jupyter lab               # URL with token in the log
+  <venv>/bin/jupyter notebook          # the classic interface
+  Ctrl-C                               # in the server's terminal
+
+KERNELS (chapter 5)
+--------------------------------------------------------------------
+  <venv>/bin/jupyter kernelspec list
+  <venv>/bin/python -m bash_kernel.install --sys-prefix
+  In the notebook: Kernel menu -> Restart (forget everything),
+  Restart & Run All (the chapter 8 ritual), Shut Down.
+
+RUN WITHOUT THE BROWSER (chapter 10)
+--------------------------------------------------------------------
+  <venv>/bin/jupyter execute --inplace <file>
+  <venv>/bin/jupyter execute --output run-<file> <file>
+                                   # without --inplace or --output,
+                                   # results are DISCARDED (t90)
+  <venv>/bin/jupyter execute --inplace --timeout=120 <file>
+  <venv>/bin/jupyter nbconvert --to notebook \
+      --ClearOutputPreprocessor.enabled=True \
+      --output cleared.ipynb <file>
+
+CONVERT AND SHARE (chapter 11)
+--------------------------------------------------------------------
+  <venv>/bin/jupyter nbconvert --to html <file>
+  <venv>/bin/jupyter nbconvert --to script <file>
+  <venv>/bin/jupyter nbconvert --to pdf <file>
+                                   # needs LaTeX or a browser
+                                   # engine; not lab-tested
+
+RUN IT FOR REAL (chapter 12)
+--------------------------------------------------------------------
+  <venv>/bin/jupyter lab --generate-config
+  <venv>/bin/python -c \
+    "from jupyter_server.auth import passwd; print(passwd())"
+                                   # prints the argon2 hash to
+                                   # paste into the config file
+  ssh -L 8888:localhost:8888 your-server
+                                   # then browse localhost:8888

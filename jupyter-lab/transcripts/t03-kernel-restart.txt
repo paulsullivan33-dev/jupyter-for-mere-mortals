@@ -1,0 +1,6 @@
+$ python restart_demo.py   (talk to a kernel directly, restart it, look for the variable)
+run  x = 41            -> (no output)
+run  print(x + 1)      -> 42
+--- kernel restarts ---
+run  print(x)          -> NameError: name 'x' is not defined
+the variable lived in the kernel, not in the notebook

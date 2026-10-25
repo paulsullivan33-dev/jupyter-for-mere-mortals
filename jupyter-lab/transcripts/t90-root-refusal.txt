@@ -1,0 +1,5 @@
+$ first attempt, on a machine where the user is root — the server refuses:
+[I 2026-10-25 02:25:20.459 ServerApp] notebook | extension was successfully loaded.
+[C 2026-10-25 02:25:20.460 ServerApp] Running as root is not recommended. Use --allow-root to bypass.
+
+Ordinary readers are not root on their own machines and never see this.

@@ -1,0 +1,13 @@
+$ jupyter nbconvert --to notebook --ClearOutputPreprocessor.enabled=True --output cleared.ipynb weather-lab.ipynb
+[NbConvertApp] Writing 4282 bytes to cleared.ipynb
+after clearing: outputs [[], [], [], []] counts [None, None, None, None]
+-rw-rw---- 1 root root 4282 Oct 25 02:23 cleared.ipynb
+
+$ jupyter execute --inplace cleared.ipynb   (run the cleared copy from nothing)
+[NbClientApp] Executing cleared.ipynb
+[NbClientApp] Executing notebook with kernel: python3
+[NbClientApp] Save executed results to cleared.ipynb
+
+$ diff of the two runs, stream text only
+run 1 streams: 2  run 2 streams: 2
+IDENTICAL

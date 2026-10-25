@@ -1,0 +1,13 @@
+$ build a two-cell bash notebook and execute it the same way
+wrote bash-lab.ipynb, kernelspec: bash
+
+$ jupyter execute --inplace bash-lab.ipynb
+[NbClientApp] Executing bash-lab.ipynb
+[NbClientApp] Executing notebook with kernel: bash
+[NbClientApp] Save executed results to bash-lab.ipynb
+
+$ what the kernel sent back:
+The Millbrook diary, 2026
+31
+date,high_c,low_c,rain_mm
+2026-06-01,24,13,0.0
